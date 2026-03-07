@@ -1,0 +1,1362 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Resaa Ayurveda – Authentic Ayurvedic Cosmetics</title>
+    <meta
+      name="description"
+      content="Authentic Ayurvedic cosmetic products by Dr. Amrutha Sabu. Rooted in ancient wisdom, crafted for modern skin."
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400&family=Jost:wght@300;400;500&display=swap"
+      rel="stylesheet"
+    />
+    <style>
+      *,
+      *::before,
+      *::after {
+        box-sizing: border-box;
+        margin: 0;
+        padding: 0;
+      }
+      :root {
+        --cream: #f7f2ea;
+        --warm-white: #fdf9f3;
+        --deep-green: #2d4a35;
+        --mid-green: #4a7c59;
+        --light-green: #a8c5a0;
+        --gold: #c9a84c;
+        --gold-light: #e8d5a3;
+        --terracotta: #b5541c;
+        --text-dark: #1e2d22;
+        --text-mid: #4a5c4e;
+        --text-light: #8a9e8e;
+      }
+      html {
+        scroll-behavior: smooth;
+      }
+      body {
+        font-family: "Jost", sans-serif;
+        background-color: var(--warm-white);
+        color: var(--text-dark);
+        overflow-x: hidden;
+      }
+
+      /* NAV */
+      nav {
+        position: fixed;
+        top: 0;
+        left: 0;
+        right: 0;
+        z-index: 100;
+        padding: 1.4rem 3rem;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        background: rgba(253, 249, 243, 0.88);
+        backdrop-filter: blur(14px);
+        border-bottom: 1px solid rgba(201, 168, 76, 0.18);
+      }
+      .nav-logo {
+        display: flex;
+        flex-direction: column;
+        line-height: 1;
+      }
+      .nav-logo .brand {
+        font-family: "Cormorant Garamond", serif;
+        font-size: 1.75rem;
+        font-weight: 600;
+        color: var(--deep-green);
+        letter-spacing: 0.06em;
+      }
+      .nav-logo .sub {
+        font-size: 0.58rem;
+        letter-spacing: 0.28em;
+        color: var(--gold);
+        text-transform: uppercase;
+        margin-top: 2px;
+      }
+      .nav-links {
+        display: flex;
+        gap: 2.5rem;
+        list-style: none;
+      }
+      .nav-links a {
+        text-decoration: none;
+        font-size: 0.77rem;
+        letter-spacing: 0.16em;
+        text-transform: uppercase;
+        color: var(--text-mid);
+        transition: color 0.3s;
+      }
+      .nav-links a:hover {
+        color: var(--deep-green);
+      }
+      .nav-cta {
+        background: var(--deep-green) !important;
+        color: var(--cream) !important;
+        padding: 0.55rem 1.4rem;
+      }
+      .nav-cta:hover {
+        background: var(--mid-green) !important;
+      }
+      .hamburger {
+        display: none;
+        flex-direction: column;
+        gap: 5px;
+        cursor: pointer;
+      }
+      .hamburger span {
+        width: 24px;
+        height: 2px;
+        background: var(--deep-green);
+        transition: all 0.3s;
+      }
+
+      /* HERO */
+      .hero {
+        min-height: 100vh;
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        position: relative;
+        overflow: hidden;
+      }
+      .hero-left {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        padding: 8rem 4rem 5rem 6rem;
+        z-index: 2;
+      }
+      .hero-eyebrow {
+        display: flex;
+        align-items: center;
+        gap: 0.8rem;
+        margin-bottom: 1.5rem;
+        animation: fadeUp 0.9s ease both;
+      }
+      .hero-eyebrow::before {
+        content: "";
+        width: 40px;
+        height: 1px;
+        background: var(--gold);
+      }
+      .hero-eyebrow span {
+        font-size: 0.68rem;
+        letter-spacing: 0.3em;
+        text-transform: uppercase;
+        color: var(--gold);
+      }
+      .hero h1 {
+        font-family: "Cormorant Garamond", serif;
+        font-size: clamp(3rem, 6vw, 5.5rem);
+        font-weight: 300;
+        line-height: 1.05;
+        color: var(--deep-green);
+        margin-bottom: 1.5rem;
+        animation: fadeUp 0.9s 0.15s ease both;
+      }
+      .hero h1 em {
+        font-style: italic;
+        color: var(--gold);
+      }
+      .hero-desc {
+        font-size: 0.98rem;
+        line-height: 1.85;
+        color: var(--text-mid);
+        max-width: 420px;
+        margin-bottom: 2.5rem;
+        animation: fadeUp 0.9s 0.3s ease both;
+      }
+      .hero-actions {
+        display: flex;
+        gap: 1rem;
+        align-items: center;
+        animation: fadeUp 0.9s 0.45s ease both;
+      }
+      .btn-primary {
+        background: var(--deep-green);
+        color: var(--cream);
+        border: none;
+        padding: 1rem 2.2rem;
+        font-family: "Jost";
+        font-size: 0.78rem;
+        letter-spacing: 0.2em;
+        text-transform: uppercase;
+        cursor: pointer;
+        text-decoration: none;
+        display: inline-block;
+        transition: all 0.3s;
+      }
+      .btn-primary:hover {
+        background: var(--mid-green);
+        transform: translateY(-2px);
+      }
+      .btn-outline {
+        border: 1px solid var(--deep-green);
+        color: var(--deep-green);
+        padding: 1rem 2.2rem;
+        font-family: "Jost";
+        font-size: 0.78rem;
+        letter-spacing: 0.2em;
+        text-transform: uppercase;
+        text-decoration: none;
+        transition: all 0.3s;
+        display: inline-block;
+      }
+      .btn-outline:hover {
+        background: var(--deep-green);
+        color: var(--cream);
+      }
+      .hero-right {
+        position: relative;
+        overflow: hidden;
+      }
+      .hero-bg {
+        position: absolute;
+        inset: 0;
+        background: linear-gradient(
+          135deg,
+          #d4e6cb 0%,
+          #a8c5a0 45%,
+          #4a7c59 100%
+        );
+      }
+      .hero-leaf {
+        position: absolute;
+        inset: 0;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 20rem;
+        opacity: 0.1;
+        animation: floatGently 9s ease-in-out infinite;
+        user-select: none;
+      }
+      .hero-badge {
+        position: absolute;
+        bottom: 3rem;
+        right: 3rem;
+        width: 110px;
+        height: 110px;
+        border-radius: 50%;
+        background: var(--gold);
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        text-align: center;
+        animation: spin 22s linear infinite;
+      }
+      .hero-badge span {
+        font-size: 0.52rem;
+        letter-spacing: 0.12em;
+        text-transform: uppercase;
+        color: var(--deep-green);
+        font-weight: 600;
+        line-height: 1.5;
+      }
+
+      /* DOCTOR BANNER */
+      .doctor-banner {
+        background: var(--deep-green);
+        padding: 3.5rem 6rem;
+        display: flex;
+        align-items: center;
+        gap: 4rem;
+      }
+      .doctor-avatar {
+        width: 80px;
+        height: 80px;
+        border-radius: 50%;
+        background: linear-gradient(
+          135deg,
+          var(--mid-green),
+          var(--light-green)
+        );
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 2rem;
+        flex-shrink: 0;
+        border: 2px solid rgba(201, 168, 76, 0.4);
+      }
+      .doctor-info {
+        flex: 1;
+      }
+      .doctor-label {
+        font-size: 0.62rem;
+        letter-spacing: 0.3em;
+        text-transform: uppercase;
+        color: var(--gold);
+        margin-bottom: 0.5rem;
+      }
+      .doctor-name {
+        font-family: "Cormorant Garamond", serif;
+        font-size: 1.9rem;
+        font-weight: 400;
+        font-style: italic;
+        color: var(--cream);
+        margin-bottom: 0.3rem;
+      }
+      .doctor-cred {
+        font-size: 0.84rem;
+        color: rgba(247, 242, 234, 0.65);
+        line-height: 1.65;
+      }
+      .coming-soon-pill {
+        background: var(--gold);
+        color: var(--deep-green);
+        padding: 0.6rem 1.6rem;
+        font-size: 0.68rem;
+        letter-spacing: 0.22em;
+        text-transform: uppercase;
+        font-weight: 700;
+        border-radius: 2px;
+        flex-shrink: 0;
+        animation: pulse 2.5s ease-in-out infinite;
+      }
+
+      /* MARQUEE */
+      .marquee-strip {
+        background: var(--text-dark);
+        padding: 1.1rem 0;
+        overflow: hidden;
+      }
+      .marquee-track {
+        display: flex;
+        gap: 3rem;
+        animation: marquee 35s linear infinite;
+        white-space: nowrap;
+      }
+      .marquee-item {
+        display: flex;
+        align-items: center;
+        gap: 0.9rem;
+        font-size: 0.68rem;
+        letter-spacing: 0.22em;
+        text-transform: uppercase;
+        color: var(--gold-light);
+        flex-shrink: 0;
+      }
+      .marquee-dot {
+        width: 4px;
+        height: 4px;
+        border-radius: 50%;
+        background: var(--gold);
+      }
+
+      /* SECTION HEADERS */
+      .section-header {
+        text-align: center;
+        margin-bottom: 4rem;
+      }
+      .section-eyebrow {
+        display: inline-flex;
+        align-items: center;
+        gap: 0.8rem;
+        font-size: 0.67rem;
+        letter-spacing: 0.3em;
+        text-transform: uppercase;
+        color: var(--gold);
+        margin-bottom: 1rem;
+      }
+      .section-eyebrow::before,
+      .section-eyebrow::after {
+        content: "";
+        width: 28px;
+        height: 1px;
+        background: var(--gold);
+      }
+      .section-title {
+        font-family: "Cormorant Garamond", serif;
+        font-size: clamp(2.2rem, 4vw, 3.4rem);
+        font-weight: 300;
+        color: var(--deep-green);
+        line-height: 1.15;
+      }
+      .section-title em {
+        font-style: italic;
+        color: var(--gold);
+      }
+
+      /* PRODUCTS */
+      .products-section {
+        padding: 7rem 4rem;
+        background: var(--warm-white);
+      }
+      .products-grid {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 2rem;
+        max-width: 1200px;
+        margin: 0 auto;
+      }
+      .product-card {
+        background: var(--cream);
+        overflow: hidden;
+        cursor: pointer;
+        transition: all 0.4s ease;
+        position: relative;
+      }
+      .product-card:hover {
+        transform: translateY(-6px);
+        box-shadow: 0 20px 50px rgba(45, 74, 53, 0.14);
+      }
+      .product-img {
+        width: 100%;
+        aspect-ratio: 4/3;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 5rem;
+        position: relative;
+        overflow: hidden;
+        transition: transform 0.5s;
+      }
+      .product-card:hover .product-img {
+        transform: scale(1.04);
+      }
+      .product-badge {
+        position: absolute;
+        top: 1rem;
+        right: 1rem;
+        background: var(--gold);
+        color: var(--deep-green);
+        font-size: 0.52rem;
+        letter-spacing: 0.2em;
+        text-transform: uppercase;
+        padding: 0.28rem 0.75rem;
+        font-weight: 700;
+      }
+      .product-body {
+        padding: 1.5rem;
+      }
+      .product-category {
+        font-size: 0.58rem;
+        letter-spacing: 0.25em;
+        text-transform: uppercase;
+        color: var(--gold);
+        margin-bottom: 0.4rem;
+      }
+      .product-name {
+        font-family: "Cormorant Garamond", serif;
+        font-size: 1.38rem;
+        font-weight: 500;
+        color: var(--deep-green);
+        margin-bottom: 0.5rem;
+      }
+      .product-desc {
+        font-size: 0.81rem;
+        line-height: 1.72;
+        color: var(--text-mid);
+        margin-bottom: 1.2rem;
+      }
+      .product-action {
+        display: flex;
+        align-items: center;
+        gap: 0.5rem;
+        font-size: 0.68rem;
+        letter-spacing: 0.2em;
+        text-transform: uppercase;
+        color: var(--deep-green);
+        font-weight: 500;
+        transition: gap 0.3s;
+      }
+      .product-card:hover .product-action {
+        gap: 1rem;
+      }
+
+      /* ABOUT */
+      .about-wrap {
+        padding: 7rem 6rem;
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 6rem;
+        align-items: center;
+        max-width: 1300px;
+        margin: 0 auto;
+      }
+      .about-visual {
+        position: relative;
+        height: 500px;
+      }
+      .about-main {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 80%;
+        height: 85%;
+        background: linear-gradient(155deg, #c8dfc2, #7aaa87);
+        border-radius: 4px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 8rem;
+        opacity: 0.85;
+      }
+      .about-accent {
+        position: absolute;
+        bottom: 0;
+        right: 0;
+        width: 55%;
+        height: 50%;
+        background: var(--gold-light);
+        border-radius: 4px;
+        border: 6px solid var(--warm-white);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 4rem;
+      }
+      .about-body {
+        font-size: 0.98rem;
+        line-height: 1.9;
+        color: var(--text-mid);
+        margin-bottom: 1.5rem;
+      }
+      .stats-row {
+        display: flex;
+        gap: 3rem;
+        margin-top: 2.5rem;
+      }
+      .stat-num {
+        font-family: "Cormorant Garamond", serif;
+        font-size: 2.5rem;
+        font-weight: 600;
+        color: var(--deep-green);
+        line-height: 1;
+      }
+      .stat-label {
+        font-size: 0.67rem;
+        letter-spacing: 0.15em;
+        text-transform: uppercase;
+        color: var(--text-light);
+        margin-top: 0.3rem;
+      }
+
+      /* VALUES */
+      .values-section {
+        background: var(--cream);
+        padding: 6rem 4rem;
+      }
+      .values-grid {
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        gap: 2rem;
+        max-width: 1200px;
+        margin: 3rem auto 0;
+      }
+      .value-card {
+        padding: 2.5rem 1.5rem;
+        border: 1px solid rgba(168, 197, 160, 0.4);
+        text-align: center;
+        transition: all 0.35s;
+      }
+      .value-card:hover {
+        border-color: var(--gold);
+        transform: translateY(-4px);
+      }
+      .value-icon {
+        font-size: 2.5rem;
+        margin-bottom: 1rem;
+      }
+      .value-title {
+        font-family: "Cormorant Garamond", serif;
+        font-size: 1.3rem;
+        font-weight: 500;
+        color: var(--deep-green);
+        margin-bottom: 0.7rem;
+      }
+      .value-desc {
+        font-size: 0.81rem;
+        line-height: 1.72;
+        color: var(--text-mid);
+      }
+
+      /* FOOTER */
+      footer {
+        background: var(--text-dark);
+        color: rgba(247, 242, 234, 0.8);
+        padding: 5rem 6rem 2.5rem;
+      }
+      .footer-top {
+        display: grid;
+        grid-template-columns: 1.5fr 1fr 1fr;
+        gap: 4rem;
+        margin-bottom: 4rem;
+        padding-bottom: 3rem;
+        border-bottom: 1px solid rgba(255, 255, 255, 0.07);
+      }
+      .footer-brand-name {
+        font-family: "Cormorant Garamond", serif;
+        font-size: 2rem;
+        font-weight: 600;
+        color: var(--cream);
+      }
+      .footer-brand p {
+        font-size: 0.84rem;
+        line-height: 1.8;
+        color: rgba(247, 242, 234, 0.55);
+        margin-top: 1rem;
+        max-width: 280px;
+      }
+      .footer-domain {
+        color: var(--gold);
+        font-size: 0.8rem;
+        letter-spacing: 0.1em;
+        margin-top: 1rem;
+        display: block;
+      }
+      .footer-col h4 {
+        font-size: 0.65rem;
+        letter-spacing: 0.28em;
+        text-transform: uppercase;
+        color: var(--gold);
+        margin-bottom: 1.5rem;
+      }
+      .footer-col ul {
+        list-style: none;
+      }
+      .footer-col ul li {
+        margin-bottom: 0.8rem;
+        font-size: 0.84rem;
+        color: rgba(247, 242, 234, 0.55);
+        cursor: pointer;
+        transition: color 0.2s;
+      }
+      .footer-col ul li:hover {
+        color: var(--cream);
+      }
+      .footer-bottom {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        font-size: 0.73rem;
+        color: rgba(247, 242, 234, 0.35);
+      }
+      .footer-domain-bottom {
+        color: var(--gold);
+        font-size: 0.78rem;
+      }
+
+      /* MODAL */
+      .modal-overlay {
+        position: fixed;
+        inset: 0;
+        background: rgba(30, 45, 34, 0.72);
+        backdrop-filter: blur(7px);
+        z-index: 500;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        opacity: 0;
+        pointer-events: none;
+        transition: opacity 0.3s;
+        padding: 1rem;
+      }
+      .modal-overlay.active {
+        opacity: 1;
+        pointer-events: all;
+      }
+      .modal {
+        background: var(--warm-white);
+        max-width: 560px;
+        width: 100%;
+        padding: 3rem;
+        position: relative;
+        transform: translateY(20px);
+        transition: transform 0.3s;
+        max-height: 90vh;
+        overflow-y: auto;
+      }
+      .modal-overlay.active .modal {
+        transform: translateY(0);
+      }
+      .modal-close {
+        position: absolute;
+        top: 1.2rem;
+        right: 1.5rem;
+        background: none;
+        border: none;
+        font-size: 1.4rem;
+        cursor: pointer;
+        color: var(--text-mid);
+      }
+      .modal-img {
+        width: 100%;
+        aspect-ratio: 16/9;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 6rem;
+        margin-bottom: 1.5rem;
+        border-radius: 4px;
+      }
+      .modal-category {
+        font-size: 0.6rem;
+        letter-spacing: 0.25em;
+        text-transform: uppercase;
+        color: var(--gold);
+        margin-bottom: 0.5rem;
+      }
+      .modal-name {
+        font-family: "Cormorant Garamond", serif;
+        font-size: 1.9rem;
+        color: var(--deep-green);
+        margin-bottom: 1rem;
+      }
+      .modal-desc {
+        font-size: 0.9rem;
+        line-height: 1.8;
+        color: var(--text-mid);
+        margin-bottom: 1.5rem;
+      }
+      .modal-ingr {
+        font-size: 0.75rem;
+        color: var(--text-light);
+        margin-bottom: 2rem;
+        line-height: 1.7;
+      }
+      .modal-ingr strong {
+        color: var(--deep-green);
+        display: block;
+        margin-bottom: 0.3rem;
+        font-size: 0.7rem;
+        letter-spacing: 0.15em;
+        text-transform: uppercase;
+      }
+      /* ANIMATIONS */
+      @keyframes fadeUp {
+        from {
+          opacity: 0;
+          transform: translateY(24px);
+        }
+        to {
+          opacity: 1;
+          transform: translateY(0);
+        }
+      }
+      @keyframes floatGently {
+        0%,
+        100% {
+          transform: translateY(0) rotate(0deg);
+        }
+        50% {
+          transform: translateY(-20px) rotate(5deg);
+        }
+      }
+      @keyframes spin {
+        from {
+          transform: rotate(0deg);
+        }
+        to {
+          transform: rotate(360deg);
+        }
+      }
+      @keyframes pulse {
+        0%,
+        100% {
+          opacity: 1;
+        }
+        50% {
+          opacity: 0.7;
+        }
+      }
+      @keyframes marquee {
+        from {
+          transform: translateX(0);
+        }
+        to {
+          transform: translateX(-50%);
+        }
+      }
+
+      /* REVEAL */
+      .reveal {
+        opacity: 0;
+        transform: translateY(28px);
+        transition:
+          opacity 0.7s ease,
+          transform 0.7s ease;
+      }
+      .reveal.visible {
+        opacity: 1;
+        transform: translateY(0);
+      }
+
+      /* MOBILE */
+      @media (max-width: 900px) {
+        nav {
+          padding: 1.1rem 1.5rem;
+        }
+        .nav-links {
+          display: none;
+        }
+        .hamburger {
+          display: flex;
+        }
+        .hero {
+          grid-template-columns: 1fr;
+          min-height: auto;
+        }
+        .hero-left {
+          padding: 7rem 2rem 3rem;
+        }
+        .hero-right {
+          height: 280px;
+        }
+        .doctor-banner {
+          flex-direction: column;
+          padding: 2.5rem 2rem;
+          gap: 1.5rem;
+          text-align: center;
+        }
+        .products-section {
+          padding: 4rem 1.2rem;
+        }
+        .products-grid {
+          grid-template-columns: 1fr 1fr;
+        }
+        .about-wrap {
+          grid-template-columns: 1fr;
+          padding: 4rem 2rem;
+          gap: 3rem;
+        }
+        .about-visual {
+          height: 280px;
+        }
+        .values-grid {
+          grid-template-columns: 1fr 1fr;
+        }
+        .footer-top {
+          grid-template-columns: 1fr;
+          gap: 2.5rem;
+        }
+        footer {
+          padding: 3rem 2rem 2rem;
+        }
+        .footer-bottom {
+          flex-direction: column;
+          gap: 0.5rem;
+          text-align: center;
+        }
+      }
+      @media (max-width: 500px) {
+        .products-grid {
+          grid-template-columns: 1fr;
+        }
+        .values-grid {
+          grid-template-columns: 1fr;
+        }
+        .hero-left {
+          padding: 6rem 1.5rem 2.5rem;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <nav>
+      <div class="nav-logo">
+        <span class="brand">Resaa</span>
+        <span class="sub">Ayurveda</span>
+      </div>
+      <ul class="nav-links" id="nav-links">
+        <li><a href="#products">Products</a></li>
+        <li><a href="#about">Our Story</a></li>
+        <li><a href="#values">Philosophy</a></li>
+        <li><a href="#products" class="nav-cta">Shop Now</a></li>
+      </ul>
+      <div class="hamburger" id="hamburger">
+        <span></span><span></span><span></span>
+      </div>
+    </nav>
+
+    <!-- HERO -->
+    <section class="hero">
+      <div class="hero-left">
+        <div class="hero-eyebrow">
+          <span>Ancient Wisdom · Modern Ritual</span>
+        </div>
+        <h1>Nature's<br /><em>Sacred</em><br />Pharmacy</h1>
+        <p class="hero-desc">
+          Authentic Ayurvedic cosmetics rooted in 5,000 years of botanical
+          wisdom — formulated with care, crafted for your skin's natural
+          harmony.
+        </p>
+        <div class="hero-actions">
+          <a href="#products" class="btn-primary">Explore Products</a>
+          <a href="#about" class="btn-outline">Our Story</a>
+        </div>
+      </div>
+      <div class="hero-right">
+        <div class="hero-bg"></div>
+        <div class="hero-leaf">🌿</div>
+        <div class="hero-badge">
+          <span>Authentic<br />Ayurvedic<br />Formula</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- DOCTOR -->
+    <div class="doctor-banner">
+      <div class="doctor-avatar">🌸</div>
+      <div class="doctor-info">
+        <div class="doctor-label">Curated By</div>
+        <div class="doctor-name">Dr. Amrutha Sabu</div>
+        <div class="doctor-cred">
+          Authentic Ayurveda cosmetic products — formulated with expertise and
+          rooted in classical Ayurvedic tradition.
+        </div>
+      </div>
+      <div class="coming-soon-pill">Coming Soon</div>
+    </div>
+
+    <!-- MARQUEE -->
+    <div class="marquee-strip">
+      <div class="marquee-track">
+        <div class="marquee-item">
+          <div class="marquee-dot"></div>
+          Njavara Rice
+        </div>
+        <div class="marquee-item">
+          <div class="marquee-dot"></div>
+          Pure Aloe Vera
+        </div>
+        <div class="marquee-item">
+          <div class="marquee-dot"></div>
+          Bhringraj
+        </div>
+        <div class="marquee-item">
+          <div class="marquee-dot"></div>
+          Sesame Oil
+        </div>
+        <div class="marquee-item">
+          <div class="marquee-dot"></div>
+          Ashwagandha
+        </div>
+        <div class="marquee-item">
+          <div class="marquee-dot"></div>
+          Turmeric
+        </div>
+        <div class="marquee-item">
+          <div class="marquee-dot"></div>
+          Amla
+        </div>
+        <div class="marquee-item">
+          <div class="marquee-dot"></div>
+          Coconut Milk
+        </div>
+        <div class="marquee-item">
+          <div class="marquee-dot"></div>
+          Vetiver Root
+        </div>
+        <div class="marquee-item">
+          <div class="marquee-dot"></div>
+          Saffron
+        </div>
+        <div class="marquee-item">
+          <div class="marquee-dot"></div>
+          Neem
+        </div>
+        <div class="marquee-item">
+          <div class="marquee-dot"></div>
+          Rose Water
+        </div>
+        <div class="marquee-item">
+          <div class="marquee-dot"></div>
+          Njavara Rice
+        </div>
+        <div class="marquee-item">
+          <div class="marquee-dot"></div>
+          Pure Aloe Vera
+        </div>
+        <div class="marquee-item">
+          <div class="marquee-dot"></div>
+          Bhringraj
+        </div>
+        <div class="marquee-item">
+          <div class="marquee-dot"></div>
+          Sesame Oil
+        </div>
+        <div class="marquee-item">
+          <div class="marquee-dot"></div>
+          Ashwagandha
+        </div>
+        <div class="marquee-item">
+          <div class="marquee-dot"></div>
+          Turmeric
+        </div>
+        <div class="marquee-item">
+          <div class="marquee-dot"></div>
+          Amla
+        </div>
+        <div class="marquee-item">
+          <div class="marquee-dot"></div>
+          Coconut Milk
+        </div>
+        <div class="marquee-item">
+          <div class="marquee-dot"></div>
+          Vetiver Root
+        </div>
+        <div class="marquee-item">
+          <div class="marquee-dot"></div>
+          Saffron
+        </div>
+        <div class="marquee-item">
+          <div class="marquee-dot"></div>
+          Neem
+        </div>
+        <div class="marquee-item">
+          <div class="marquee-dot"></div>
+          Rose Water
+        </div>
+      </div>
+    </div>
+
+    <!-- PRODUCTS -->
+    <section class="products-section" id="products">
+      <div class="section-header">
+        <div class="section-eyebrow">Our Collection</div>
+        <h2 class="section-title">
+          Crafted from <em>Earth's</em><br />Finest Botanicals
+        </h2>
+      </div>
+      <div class="products-grid" id="products-grid"></div>
+    </section>
+
+    <!-- ABOUT -->
+    <section id="about" style="background: var(--warm-white)">
+      <div class="about-wrap">
+        <div class="about-visual reveal">
+          <div class="about-main">🌱</div>
+          <div class="about-accent">🪷</div>
+        </div>
+        <div class="reveal">
+          <div class="section-eyebrow" style="margin-bottom: 1rem">
+            Our Philosophy
+          </div>
+          <h2
+            class="section-title"
+            style="text-align: left; margin-bottom: 1.5rem"
+          >
+            Rooted in <em>Tradition</em>,<br />Made for Today
+          </h2>
+          <p class="about-body">
+            Resaa Ayurveda was born from a deep reverence for India's ancient
+            healing traditions. Every formula is inspired by classical Ayurvedic
+            texts and crafted under the guidance of Dr. Amrutha Sabu — blending
+            time-tested botanical ingredients with modern cosmetic care.
+          </p>
+          <p class="about-body">
+            We believe that true beauty is not applied — it is cultivated. Our
+            products work in harmony with your body's natural rhythms,
+            nourishing from the surface to the cellular level.
+          </p>
+          <div class="stats-row">
+            <div>
+              <div class="stat-num">9+</div>
+              <div class="stat-label">Formulations</div>
+            </div>
+            <div>
+              <div class="stat-num">100%</div>
+              <div class="stat-label">Natural Origin</div>
+            </div>
+            <div>
+              <div class="stat-num">5000</div>
+              <div class="stat-label">Years of Wisdom</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- VALUES -->
+    <section class="values-section" id="values">
+      <div class="section-header">
+        <div class="section-eyebrow">Why Resaa</div>
+        <h2 class="section-title">Our <em>Promise</em> to You</h2>
+      </div>
+      <div class="values-grid">
+        <div class="value-card reveal">
+          <div class="value-icon">🌿</div>
+          <div class="value-title">Pure Botanicals</div>
+          <div class="value-desc">
+            Every ingredient is plant-derived and carefully sourced. No harmful
+            synthetics, no shortcuts — only what nature intended.
+          </div>
+        </div>
+        <div class="value-card reveal">
+          <div class="value-icon">🏺</div>
+          <div class="value-title">Ancient Formulas</div>
+          <div class="value-desc">
+            Our recipes draw from classical Ayurvedic texts and time-tested
+            regional traditions passed through generations.
+          </div>
+        </div>
+        <div class="value-card reveal">
+          <div class="value-icon">🔬</div>
+          <div class="value-title">Expert Guidance</div>
+          <div class="value-desc">
+            Formulated under the expertise of Dr. Amrutha Sabu, combining
+            Ayurvedic knowledge with modern cosmetic science.
+          </div>
+        </div>
+        <div class="value-card reveal">
+          <div class="value-icon">🤍</div>
+          <div class="value-title">Skin Harmony</div>
+          <div class="value-desc">
+            We honor your skin's unique prakriti (constitution), creating
+            balance rather than forcing uniformity on every skin type.
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer>
+      <div class="footer-top">
+        <div class="footer-brand">
+          <div class="footer-brand-name">Resaa Ayurveda</div>
+          <p>
+            Authentic Ayurvedic cosmetic products by Dr. Amrutha Sabu. Bridging
+            the ancient wisdom of India with your everyday beauty ritual.
+          </p>
+          <span class="footer-domain">www.resaayurveda.com</span>
+        </div>
+        <div class="footer-col">
+          <h4>Products</h4>
+          <ul>
+            <li>Lip Balm (Tinted)</li>
+            <li>Lip Balm (Non-Tinted)</li>
+            <li>Njavara Face Pack</li>
+            <li>Ashtakoot Soap</li>
+            <li>Moisturising Cream</li>
+            <li>Hair Oil</li>
+            <li>Hair Shampoo</li>
+            <li>Hair Pack</li>
+            <li>Face Oil</li>
+            <li>Aloe Vera Gel</li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>Information</h4>
+          <ul>
+            <li>About Us</li>
+            <li>Our Philosophy</li>
+            <li>Dr. Amrutha Sabu</li>
+            <li>Ingredients</li>
+            <li>Contact Us</li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <span>© 2025 Resaa Ayurveda. All rights reserved.</span>
+        <span class="footer-domain-bottom">www.resaayurveda.com</span>
+      </div>
+    </footer>
+
+    <!-- MODAL -->
+    <div class="modal-overlay" id="modal-overlay">
+      <div class="modal">
+        <button class="modal-close" id="modal-close">✕</button>
+        <div class="modal-img" id="modal-img"></div>
+        <div class="modal-category" id="modal-cat"></div>
+        <div class="modal-name" id="modal-name"></div>
+        <div class="modal-desc" id="modal-desc"></div>
+        <div class="modal-ingr" id="modal-ingr"></div>
+        <div
+          style="
+            text-align: center;
+            padding: 1rem;
+            background: var(--cream);
+            border: 1px solid rgba(201, 168, 76, 0.3);
+            font-size: 0.78rem;
+            color: var(--text-light);
+            letter-spacing: 0.1em;
+          "
+        >
+          🌿 &nbsp; Orders &amp; enquiries coming soon
+        </div>
+      </div>
+    </div>
+
+    <script>
+      // ── CONFIG ──
+      // WhatsApp ordering will be added after licensing
+
+      // ── PRODUCTS DATA ──
+      const products = [
+        {
+          name: "Tinted Lip Balm",
+          category: "Lip Care",
+          emoji: "💄",
+          bg: "linear-gradient(135deg,#f7c5c5,#e88080)",
+          badge: "Bestseller",
+          desc: "A gentle fusion of beeswax, rose hip, and saffron that delivers a sheer luminous tint while deeply conditioning your lips with time-honoured Ayurvedic botanicals. The natural tint comes from plant extracts, making it completely safe for daily use.",
+          ingr: "Beeswax · Rose Hip Oil · Saffron Extract · Kokum Butter · Alkanet Root (natural tint) · Vitamin E",
+        },
+        {
+          name: "Non-Tinted Lip Balm",
+          category: "Lip Care",
+          emoji: "🌸",
+          bg: "linear-gradient(135deg,#fde8d0,#f5c49e)",
+          badge: null,
+          desc: "Pure hydration in its most natural form. Infused with ghee, sesame oil, and raw honey — trusted Ayurvedic emollients that heal and restore chapped lips overnight. Completely clear, suitable for all ages.",
+          ingr: "Ghee · Sesame Oil · Raw Honey · Shea Butter · Mulethi (Licorice) · Vitamin E",
+        },
+        {
+          name: "Njavara Face Pack",
+          category: "Face Care",
+          emoji: "🌾",
+          bg: "linear-gradient(135deg,#f5e8c0,#d4a84b)",
+          badge: "Signature",
+          desc: "Inspired by the sacred Njavara rice therapy (Njavarakizhi) of Kerala, this face pack brightens complexion, reduces pigmentation, and restores natural radiance. A centuries-old tradition in a modern formulation.",
+          ingr: "Njavara Rice Flour · Turmeric · Milk · Chandan (Sandalwood) · Rose Water · Saffron",
+        },
+        {
+          name: "Ashtakoot Soap",
+          category: "Body Care",
+          emoji: "🧼",
+          bg: "linear-gradient(135deg,#c8e6c0,#5a9e6a)",
+          badge: null,
+          desc: "Crafted from eight sacred herbs (Ashta = eight, Koot = combination), this cold-pressed soap purifies, balances, and rejuvenates skin without stripping its natural oils. Suitable for all skin types.",
+          ingr: "Neem · Turmeric · Vetiver · Manjistha · Triphala · Coconut Oil · Aloe Vera · Camphor",
+        },
+        {
+          name: "Moisturising Cream",
+          category: "Face & Body",
+          emoji: "🫙",
+          bg: "linear-gradient(135deg,#e8f4e8,#b8dbb8)",
+          badge: null,
+          desc: "A rich yet lightweight cream that melts into skin, delivering lasting hydration through potent Ayurvedic oils and botanical extracts. Suitable for all skin types including sensitive skin.",
+          ingr: "Kumkumadi Oil Blend · Aloe Vera · Ashwagandha Extract · Licorice · Beeswax · Rose Hip Oil",
+        },
+        {
+          name: "Ayurvedic Hair Oil",
+          category: "Hair Care",
+          emoji: "🌺",
+          bg: "linear-gradient(135deg,#ffe4b5,#cc8844)",
+          badge: "Popular",
+          desc: "A deeply nourishing scalp oil combining Bhringraj, Amla, and Brahmi steeped in sesame oil — the classical Ayurvedic trinity for lustrous, strong, healthy hair. Regular use promotes growth and reduces hair fall.",
+          ingr: "Bhringraj · Amla · Brahmi · Sesame Oil · Neem Leaves · Hibiscus Flowers · Curry Leaves",
+        },
+        {
+          name: "Herbal Hair Shampoo",
+          category: "Hair Care",
+          emoji: "🧴",
+          bg: "linear-gradient(135deg,#d4e8f8,#6aaed4)",
+          badge: null,
+          desc: "A gentle, soap-nut based shampoo enriched with shikakai and reetha that cleanses without harsh sulfates, leaving hair silky, voluminous, and naturally fragrant. Safe for colour-treated hair.",
+          ingr: "Reetha (Soapnut) · Shikakai · Hibiscus · Fenugreek · Amla · Aloe Vera · Rose Water",
+        },
+        {
+          name: "Ayurvedic Hair Pack",
+          category: "Hair Care",
+          emoji: "🌿",
+          bg: "linear-gradient(135deg,#c8f0c8,#3a8a3a)",
+          badge: null,
+          desc: "A weekly intensive treatment mask that deeply conditions, reduces hair fall, and restores shine using a blend of classical herbs traditionally used in Kerala hair rituals. Leaves hair soft and manageable.",
+          ingr: "Henna · Brahmi Powder · Amla Powder · Fenugreek · Coconut Milk · Curry Leaves · Neem",
+        },
+        {
+          name: "Face Oil",
+          category: "Face Care",
+          emoji: "✨",
+          bg: "linear-gradient(135deg,#fdf0d0,#f0c050)",
+          badge: "New",
+          desc: "Inspired by the legendary Kumkumadi Tailam, this face oil blends rare botanicals in a saffron-infused sesame base to illuminate, even skin tone, and deeply revive dull, tired skin. Use it as a night serum or primer.",
+          ingr: "Saffron · Manjistha · Lotus Extract · Licorice Root · Sandalwood · Sesame Oil · Vetiver",
+        },
+        {
+          name: "Aloe Vera Gel",
+          category: "Multi-use",
+          emoji: "🌵",
+          bg: "linear-gradient(135deg,#e0f7e0,#4caf7d)",
+          badge: null,
+          desc: "Cold-processed pure aloe vera gel enriched with neem and turmeric — a versatile daily essential for calming, cooling, and healing skin, hair, and scalp. Use after sun exposure or as a light daily moisturiser.",
+          ingr: "Pure Aloe Vera · Neem Extract · Turmeric · Cucumber Water · Vitamin E · Rose Hydrosol",
+        },
+      ];
+
+      // ── RENDER PRODUCTS ──
+      const grid = document.getElementById("products-grid");
+      products.forEach((p) => {
+        const card = document.createElement("div");
+        card.className = "product-card reveal";
+        card.innerHTML = `
+        <div class="product-img" style="background:${p.bg}">
+          <span>${p.emoji}</span>
+          ${p.badge ? `<div class="product-badge">${p.badge}</div>` : ""}
+        </div>
+        <div class="product-body">
+          <div class="product-category">${p.category}</div>
+          <div class="product-name">${p.name}</div>
+          <div class="product-desc">${p.desc.slice(0, 95)}…</div>
+          <div class="product-action">View Details →</div>
+        </div>`;
+        card.addEventListener("click", () => openModal(p));
+        grid.appendChild(card);
+      });
+
+      // ── MODAL ──
+      function openModal(p) {
+        document.getElementById("modal-img").style.background = p.bg;
+        document.getElementById("modal-img").textContent = p.emoji;
+        document.getElementById("modal-cat").textContent = p.category;
+        document.getElementById("modal-name").textContent = p.name;
+        document.getElementById("modal-desc").textContent = p.desc;
+        document.getElementById("modal-ingr").innerHTML =
+          `<strong>Key Ingredients</strong>${p.ingr}`;
+        document.getElementById("modal-overlay").classList.add("active");
+        document.body.style.overflow = "hidden";
+      }
+      document
+        .getElementById("modal-close")
+        .addEventListener("click", closeModal);
+      document
+        .getElementById("modal-overlay")
+        .addEventListener("click", (e) => {
+          if (e.target.id === "modal-overlay") closeModal();
+        });
+      function closeModal() {
+        document.getElementById("modal-overlay").classList.remove("active");
+        document.body.style.overflow = "";
+      }
+
+      // ── SCROLL REVEAL ──
+      const obs = new IntersectionObserver(
+        (entries) => {
+          entries.forEach((e) => {
+            if (e.isIntersecting) {
+              e.target.classList.add("visible");
+              obs.unobserve(e.target);
+            }
+          });
+        },
+        { threshold: 0.1 },
+      );
+      document.querySelectorAll(".reveal").forEach((el) => obs.observe(el));
+
+      // ── HAMBURGER (mobile) ──
+      document.getElementById("hamburger").addEventListener("click", () => {
+        const nl = document.getElementById("nav-links");
+        const open = nl.style.display === "flex";
+        nl.style.display = open ? "none" : "flex";
+        nl.style.flexDirection = "column";
+        nl.style.position = "fixed";
+        nl.style.top = "70px";
+        nl.style.right = "0";
+        nl.style.left = "0";
+        nl.style.background = "rgba(253,249,243,0.97)";
+        nl.style.padding = "1.5rem 2rem";
+        nl.style.gap = "1.5rem";
+        nl.style.borderTop = "1px solid rgba(201,168,76,0.2)";
+        if (open) nl.style.display = "none";
+      });
+    </script>
+  </body>
+</html>
